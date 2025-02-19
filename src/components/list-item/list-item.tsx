@@ -30,6 +30,8 @@ const ListItem = ({ text }: ListItemProps) => {
   return (
     <ListItemStyled $isChecked={isChecked}>
       {isChecked ? <div>Готово</div> : <div>Не готово</div>}
+
+      {isChecked && <div>Надо</div>}
       <CheckBox
         type="checkbox"
         checked={isChecked}

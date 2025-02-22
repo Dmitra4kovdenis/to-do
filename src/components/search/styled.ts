@@ -8,11 +8,11 @@ export const Input = styled.input`
     width: 750px;
     height: 40px;
     outline: none;
-    
+    font-size: 16px;
     flex-grow: 1; 
     border: none; 
     padding: 5px;
-   
+    
 
    
 `
@@ -32,7 +32,7 @@ export const ButtonSearch = styled.button`
 export const InputButtonContainer = styled.div`
     display: flex;
     
-    border: 2px solid magenta;  
+    border: 2px solid #6C63FF;  
     border-radius: 5px;
     margin: 30px auto;
     &:hover {

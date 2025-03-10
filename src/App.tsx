@@ -3,6 +3,7 @@ import "./App.css";
 import SearchBar from "./components/search/search-bar";
 import ListItem from "./components/list-item/list-item";
 import { Wrapper } from "./styled";
+import ModalWindow from "./components/modal-window/modal-window";
 
 const app = () => {
   const [list, setList] = useState<string[]>([]);
@@ -24,6 +25,7 @@ const app = () => {
           Добавить Элемент
         </button>
       </Wrapper>
+      <ModalWindow />
     </div>
   );
 };

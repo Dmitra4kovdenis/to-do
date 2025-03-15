@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  display: flex;
-`;
 export const Input = styled.input`
-  width: 750px;
+  width: 100%;
   height: 40px;
   outline: none;
   font-size: 16px;
@@ -13,11 +10,11 @@ export const Input = styled.input`
   padding: 5px;
 `;
 export const Icon = styled.img`
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   position: absolute;
-  left: 1210px;
-  top: 40px;
+  top: calc(50% - 14px);
+  right: 16px;
 `;
 export const ButtonSearch = styled.button`
   background: #fff;
@@ -25,6 +22,8 @@ export const ButtonSearch = styled.button`
   cursor: pointer;
 `;
 export const InputButtonContainer = styled.div`
+  position: relative;
+  width: 750px;
   display: flex;
   border: 2px solid #6c63ff;
   border-radius: 5px;

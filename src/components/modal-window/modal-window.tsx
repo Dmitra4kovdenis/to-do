@@ -8,8 +8,9 @@ import {
   Buttons,
   ButtonClose,
   InputContainer,
-  Overlay,
+  PlusButton,
 } from "./styled";
+import IconPlus from "../../icons/icon-plus/plus";
 
 Modal.setAppElement("#modal");
 
@@ -26,7 +27,9 @@ function ModalWindow() {
 
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
+      <PlusButton onClick={openModal}>
+        <IconPlus />
+      </PlusButton>
 
       <Modal
         isOpen={modalIsOpen}
@@ -36,7 +39,7 @@ function ModalWindow() {
         <Title>NEW NOTE</Title>
         <form>
           <InputContainer>
-            <InputModal placeholder="   Input your note..." />
+            <InputModal placeholder="Input your note..." />
           </InputContainer>
           <Buttons>
             <ButtonClose onClick={closeModal}>CANSEL</ButtonClose>

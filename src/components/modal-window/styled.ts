@@ -11,7 +11,7 @@ export const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0px 30px;
-  margin-top: 150px;
+  margin-top: 128px;
 `;
 export const customStyles = {
   content: {
@@ -52,10 +52,27 @@ export const InputModal = styled.input`
   height: 40px;
   font-size: 16px;
   display: flex;
+  padding: 0px 24px;
+  border: 1px solid #6c63ff;
+  border-radius: 5px;
 `;
 export const InputContainer = styled.div`
   display: flex;
   justify-content: center;
+`;
+export const PlusButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  width: 50px;
+  height: 50px;
+  background: #6c63ff;
+  border-radius: 25px;
+  font-size: 45px;
+  position: absolute;
+  bottom: 36px;
+  right: 340px;
 `;
 
 export const Overlay = styled.div`

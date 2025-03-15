@@ -8,6 +8,11 @@ import ModalWindow from "./components/modal-window/modal-window";
 const app = () => {
   const [list, setList] = useState<string[]>([]);
 
+  const addItem = (value: string) => {
+    const _list = [...list, value];
+    setList(_list);
+  };
+
   return (
     <div>
       <SearchBar />
@@ -15,17 +20,8 @@ const app = () => {
         {list.map((item, index) => {
           return <ListItem text={item} key={index} />;
         })}
-        <button
-          onClick={() => {
-            const _list = list.concat("Note #" + (list.length + 1));
-
-            setList(_list);
-          }}
-        >
-          Добавить Элемент
-        </button>
       </Wrapper>
-      <ModalWindow />
+      <ModalWindow addItem={addItem} />
     </div>
   );
 };

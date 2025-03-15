@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import {
   customStyles,
@@ -14,8 +14,12 @@ import IconPlus from "../../icons/icon-plus/plus";
 
 Modal.setAppElement("#modal");
 
-function ModalWindow() {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+interface ModalProps {
+  addItem: (item: string) => void;
+}
+
+function ModalWindow({ addItem }: ModalProps) {
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
     setIsOpen(true);
@@ -24,6 +28,8 @@ function ModalWindow() {
   function closeModal() {
     setIsOpen(false);
   }
+
+  const [value, setValue] = useState("");
 
   return (
     <div>
@@ -37,15 +43,27 @@ function ModalWindow() {
         style={customStyles}
       >
         <Title>NEW NOTE</Title>
-        <form>
-          <InputContainer>
-            <InputModal placeholder="Input your note..." />
-          </InputContainer>
-          <Buttons>
-            <ButtonClose onClick={closeModal}>CANSEL</ButtonClose>
-            <ButtonApply> APPLY</ButtonApply>
-          </Buttons>
-        </form>
+        <InputContainer>
+          <InputModal
+            value={value}
+            placeholder="Input your note..."
+            onChange={(event) => {
+              setValue(event.target.value);
+            }}
+          />
+        </InputContainer>
+        <Buttons>
+          <ButtonClose onClick={closeModal}>CANSEL</ButtonClose>
+          <ButtonApply
+            onClick={() => {
+              addItem(value);
+              setValue("");
+              closeModal();
+            }}
+          >
+            APPLY
+          </ButtonApply>
+        </Buttons>
       </Modal>
     </div>
   );

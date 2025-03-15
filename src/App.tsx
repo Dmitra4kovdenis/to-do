@@ -13,11 +13,21 @@ const app = () => {
     setList(_list);
   };
 
+  const [value, setValue] = useState("");
+
+  const filteredList = list.filter((item) => {
+    if (item.toLowerCase().includes(value.toLowerCase())) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
   return (
     <div>
-      <SearchBar />
+      <SearchBar value={value} setValue={setValue} />
       <Wrapper>
-        {list.map((item, index) => {
+        {filteredList.map((item, index) => {
           return <ListItem text={item} key={index} />;
         })}
       </Wrapper>

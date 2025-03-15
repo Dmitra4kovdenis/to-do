@@ -37,6 +37,11 @@ export const ButtonApply = styled.button`
   border-radius: 5px;
   border: none;
   color: white;
+
+  &:disabled {
+    opacity: 0.8;
+    pointer-events: none;
+  }
 `;
 export const ButtonClose = styled.button`
   width: 110px;

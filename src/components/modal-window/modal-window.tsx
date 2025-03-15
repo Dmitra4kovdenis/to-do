@@ -45,6 +45,7 @@ function ModalWindow({ addItem }: ModalProps) {
         <Title>NEW NOTE</Title>
         <InputContainer>
           <InputModal
+            autoFocus={true}
             value={value}
             placeholder="Input your note..."
             onChange={(event) => {
@@ -55,6 +56,7 @@ function ModalWindow({ addItem }: ModalProps) {
         <Buttons>
           <ButtonClose onClick={closeModal}>CANSEL</ButtonClose>
           <ButtonApply
+            disabled={value === ""}
             onClick={() => {
               addItem(value);
               setValue("");

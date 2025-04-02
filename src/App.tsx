@@ -4,6 +4,8 @@ import SearchBar from "./components/search/search-bar";
 import ListItem from "./components/list-item/list-item";
 import { Wrapper } from "./styled";
 import ModalWindow from "./components/modal-window/modal-window";
+import DropDown from "./components/dropdown-menu/dropdown-menu";
+import DropdownMenu from "./components/dropdown-menu/dropdown-menu";
 
 const app = () => {
   const [list, setList] = useState<string[]>([]);
@@ -25,7 +27,10 @@ const app = () => {
 
   return (
     <div>
-      <SearchBar value={value} setValue={setValue} />
+      <div className="css.container">
+        <SearchBar value={value} setValue={setValue} />
+        <DropdownMenu></DropdownMenu>
+      </div>
       <Wrapper>
         {filteredList.map((item, index) => {
           return <ListItem text={item} key={index} />;
